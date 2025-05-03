@@ -6,7 +6,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
 
   return {
-    // base: '/mianshiDemo/',
+    base: '/demo1/',
     plugins: [vue()],
     define: {
       'process.env': {
