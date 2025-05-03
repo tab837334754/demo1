@@ -4,9 +4,10 @@ import vue from '@vitejs/plugin-vue'
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
+  console.log(mode)
 
   return {
-    base: '/demo1/',
+    base: mode === 'development' ? '' : '/demo1/',
     plugins: [vue()],
     define: {
       'process.env': {
@@ -22,7 +23,7 @@ export default defineConfig(({ mode }) => {
       },
       proxy: {
         [`/${env.VITE_API_BASE_URL}`]: {
-          target: 'https://dev.178778.xyz',
+          target: `${env.VITE_API_URL}`,
           changeOrigin: true,
           rewrite: (path) => path.replace(new RegExp(`^\\/${env.VITE_API_BASE_URL}`), ''),
           secure: false, // 如果是http协议需要设置

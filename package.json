@@ -8,8 +8,6 @@
     "build": "vite build",
     "build:domain1": "VITE_DEPLOY_DOMAIN=dev.178778.xyz vite build",
     "build:domain2": "VITE_DEPLOY_DOMAIN=dev.domain2.xyz vite build",
-    "deploy:domain1": "npm run build:domain1 && gh-pages -d dist",
-    "deploy:domain2": "npm run build:domain2 && gh-pages -d dist",
     "preview": "vite preview"
   },
   "dependencies": {
