@@ -25,6 +25,7 @@ onMounted(() => {
   authStore.fetchServerInfo().then(() => {
     authStore.isAuthenticated = true
   })
+  console.log('Home')
   if (!authStore.isAuthenticated) {
     // authStore.fetchUser()
   }
